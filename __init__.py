@@ -12,9 +12,10 @@ class OVOSSkillsInfo(MycroftSkill):
     def __init__(self):
         super(OVOSSkillsInfo, self).__init__(name="OVOSSkillsInfo")
         self.skill_info_model = []
-        self.skill_model_blacklist = ["mycroft-stop.mycroftai", "mycroft-stock.mycroftai", "mycroft-configuration.mycroftai"]
+        self.skill_model_blacklist = []
 
     def initialize(self):
+        self.skill_model_blacklist = ["mycroft-stop.mycroftai", "mycroft-stock.mycroftai", "mycroft-configuration.mycroftai"]
         self.build_skills_model()
 
     def build_skills_model(self):
