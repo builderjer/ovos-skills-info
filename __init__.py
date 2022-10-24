@@ -50,7 +50,8 @@ class OVOSSkillsInfo(MycroftSkill):
     def skill_info_examples(self):
         examples = [d['examples'] for d in self.skill_info_model]
         flat_list = [item for sublist in examples for item in sublist]
-        return shuffle(flat_list)
+        shuffle(flat_list)
+        return flat_list
 
     def _getDataFromRegex(self, fileName, fileText, matchRegex):
         match = re.search(matchRegex, fileText);
