@@ -6,6 +6,7 @@ from mycroft.skills.core import MycroftSkill
 from mycroft.skills import skill_api_method
 from mycroft.util.log import LOG
 from pathlib import Path
+from random import shuffle
 
 class OVOSSkillsInfo(MycroftSkill):
 
@@ -49,6 +50,7 @@ class OVOSSkillsInfo(MycroftSkill):
     def skill_info_examples(self):
         examples = [d['examples'] for d in self.skill_info_model]
         flat_list = [item for sublist in examples for item in sublist]
+        shuffle(flat_list)
         return flat_list
 
     def _getDataFromRegex(self, fileName, fileText, matchRegex):
